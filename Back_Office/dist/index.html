@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+    <title>Adopty</title>
+    <link href="../../front_Office/assets/img/ADOPTY-LOGO.png" rel="icon">
+    <link href="css/styles.css" rel="stylesheet" />
+    <link href="https://cdn.datatables.net/1.10.20/css/dataTables.bootstrap4.min.css" rel="stylesheet"
+        crossorigin="anonymous" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/js/all.min.js"
+        crossorigin="anonymous"></script>
+</head>
+
+<body class="sb-nav-fixed">
+    <nav class="sb-topnav navbar navbar-expand navbar-dark bg-dark">
+        <a class="navbar-brand" href="../../front_Office/index.html">Adopty</a><button
+            class="btn btn-link btn-sm order-1 order-lg-0" id="sidebarToggle" href="#"><i
+                class="fas fa-bars"></i></button><!-- Navbar Search-->
+        <form class="d-none d-md-inline-block form-inline ml-auto mr-0 mr-md-3 my-2 my-md-0">
+        </form>
+        <!-- Navbar-->
+        <ul class="navbar-nav ml-auto ml-md-0">
+            <li class="nav-item">
+                <a class="dropdown-item " href="login.html"><i class="fas fa-sign-out-alt"></i>Logout</a>
+            </li>
+        </ul>
+    </nav>
+    <div id="layoutSidenav">
+        <div id="layoutSidenav_nav">
+            <nav class="sb-sidenav accordion sb-sidenav-dark" id="sidenavAccordion">
+                <div class="sb-sidenav-menu">
+                    <div class="nav">
+                        <div class="sb-sidenav-menu-heading">Welcome Back</div>
+                        <a class="nav-link" onclick="make()">
+                            <div class="sb-nav-link-icon"><i class="fas fa-plus-circle"></i></div>
+                            Make An Ad
+                        </a>
+                        <a class="nav-link" onclick="show()">
+                            <div class="sb-nav-link-icon"><i class="fas fa-book-open"></i></div>
+                            Your Ads
+                        </a>
+                    </div>
+                </div>
+            </nav>
+        </div>
+        <div id="layoutSidenav_content">
+            <main>
+                <div id="make" style="display: block;" class="container-fluid">
+                    <div class="row">
+                        <h4>Place Your Ads here</h4>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="card">
+                                <form class="card-body">
+                                    <div class="form-group">
+                                        <label for="exampleFormControlInput1">Pet Name</label>
+                                        <input type="text" class="form-control" id="petName" placeholder="Pet Name">
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label for="exampleFormControlInput1">Pet Age</label>
+                                        <input type="text" class="form-control" id="lastName" placeholder="Pet Age">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="exampleFormControlSelect1">Animal Type</label>
+                                        <select class="form-control" id="type">
+                                            <option>Dog</option>
+                                            <option>Cat</option>
+                                            <option>Bird</option>
+                                            <option>Turtle</option>
+                                            <option>Fish</option>
+                                        </select>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="exampleFormControlSelect1">Gender</label>
+                                        <select class="form-control" id="gender">
+                                            <option>Male</option>
+                                            <option>Female</option>
+                                        </select>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="exampleFormControlInput1">Your Location</label>
+                                        <input type="text" class="form-control" id="location" placeholder="Town,City">
+                                    </div>
+                                    <div class="form-group">
+                                        <button class="btn btn-primary" type="submit">Submit</button>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="card">
+                                <p class="card-body text-center">
+                                    <img id="blah" style="max-width:180px" src="../dist/assets/img/avatar.png"
+                                        class="rounded mx-auto d-block img-fluid" alt="Pet Photo">
+                                    <input type="file" onchange="readURL(this);" class="card-body" name="img"
+                                        required />
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+                <div id="show" style="display: none;" class="container-fluid">
+                    <div class="row">
+                        <h4>Check Your Previous Ads here</h4>
+                    </div>
+                    <div class="card">
+                        <div class="card-body">
+                            <table class="table table-responsive-sm table-striped table-responsive-dm">
+                                <thead>
+                                    <tr>
+                                        <th>Pet Thumbnail</th>
+                                        <th>Pet Name</th>
+                                        <th>Pet Type</th>
+                                        <th>Gender</th>
+                                        <th>Age</th>
+                                        <th>Actions</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td> <img style="height: 50px;width: 60px;" class="img-thumbnail"
+                                                src="../../front_Office/assets/img/ADOPTY-LOGO.png">
+                                        </td>
+                                        <td> hh</td>
+                                        <td> ff </td>
+                                        <td>fff </td>
+                                        <td> fff</td>
+                                        <td>
+                                            <a href="" class="btn btn-danger"> <i class="far fa-trash-alt"></i>
+                                            </a>
+                                            <a href="" class="btn btn-warning"><i class="far fa-edit"></i></a>
+                                        </td>
+                                    </tr>
+                                </tbody>
+
+                            </table>
+
+                        </div>
+                    </div>
+                </div>
+            </main>
+            <footer class="py-4 bg-light mt-auto">
+                <div class="container-fluid">
+                    <div class="d-flex align-items-center justify-content-between small">
+                        <div class="text-muted">Copyright &copy; Adopty 2020</div>
+                    </div>
+                </div>
+            </footer>
+        </div>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.bundle.min.js"
+        crossorigin="anonymous"></script>
+    <script src="js/scripts.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.min.js" crossorigin="anonymous"></script>
+    <script src="assets/demo/chart-area-demo.js"></script>
+    <script src="assets/demo/chart-bar-demo.js"></script>
+    <script src="https://cdn.datatables.net/1.10.20/js/jquery.dataTables.min.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.datatables.net/1.10.20/js/dataTables.bootstrap4.min.js" crossorigin="anonymous"></script>
+    <script src="assets/demo/datatables-demo.js"></script>
+</body>
+
+</html>
